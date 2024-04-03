@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Script de Boas-Vindas</title>
+  </head>
+  <body>
+    <script>
+      // exercicio 1
+      var nome = prompt("Informe seu nome:", "");
+      if (nome !== null && nome !== "") {
+        alert("Bem-vindo, " + nome + "!");
+      } else {
+        alert("Bem-vindo, visitante!");
+      }
+
+      var idade = prompt("Informe sua idade:", "");
+
+      // exercicio 2
+      if (idade !== null && idade !== "") {
+        idade = parseInt(idade);
+
+        if (idade % 2 === 0) {
+          alert("Sua idade é par!");
+        } else {
+          alert("Sua idade é ímpar!");
+        }
+      } else {
+        alert("Por favor, informe sua idade!");
+      }
+
+      // exercicio 3
+      var anoAtual = new Date().getFullYear();
+
+      var anoDeNascimento = 2001;
+
+      document.write("<h2>Anos do ano atual até o ano de nascimento:</h2>");
+      document.write("<ul>");
+
+      for (var ano = anoAtual; ano >= anoDeNascimento; ano--) {
+        document.write("<li>" + ano + "</li>");
+      }
+      document.write("</ul>");
+
+      // exercicio 4
+      var maioresDeIdade = 0;
+      var menoresDeIdade = 0;
+
+      for (var i = 1; i <= 10; i++) {
+        var idade = parseInt(
+          prompt("Digite a idade da " + i + "ª pessoa:", "")
+        );
+
+        if (idade >= 18) {
+          maioresDeIdade++;
+        } else {
+          menoresDeIdade++;
+        }
+      }
+      alert("Número de pessoas maiores de idade: " + maioresDeIdade);
+      alert("Número de pessoas menores de idade: " + menoresDeIdade);
+
+      // exercicio 5
+      class Aluno {
+        constructor(nome, idade, peso) {
+          this.nome = nome;
+          this.idade = idade;
+          this.peso = peso;
+        }
+      }
+
+      var meuAluno = new Aluno("Afonco", 19, 72.2);
+
+      console.log("Nome antes da alteração:", meuAluno.nome);
+      console.log("Idade antes da alteração:", meuAluno.idade);
+      console.log("Peso antes da alteração:", meuAluno.peso);
+
+      meuAluno.nome = "Ana Raquel";
+      meuAluno.idade = 25;
+      meuAluno.peso = 82.6;
+
+      console.log("Nome após alteração:", meuAluno.nome);
+      console.log("Idade após alteração:", meuAluno.idade);
+      console.log("Peso após alteração:", meuAluno.peso);
+    </script>
+  </body>
+</html>
